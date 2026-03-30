@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE1;
+  --color-gold: #B8972E;
+  --color-gold-light: #D4AF5A;
+  --color-gold-muted: #C9A84C;
+  --color-charcoal: #3A3A3A;
+  --color-charcoal-light: #5A5A5A;
+  --color-charcoal-muted: #7A7A7A;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #3A3A3A;
+  font-family: 'Montserrat', sans-serif;
+}

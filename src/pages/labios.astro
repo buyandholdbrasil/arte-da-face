@@ -1,0 +1,366 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// TODO: Substitua pelo link da sua página na Kiwify
+const KIWIFY_URL = '#inscricao';
+
+const outcomes = [
+  'Realizar preenchimento labial com segurança e precisão técnica',
+  'Dominar o planejamento e o mapeamento labial personalizado',
+  'Criar resultados naturais e simétricos para qualquer tipo de lábio',
+  'Aplicar técnicas de contorno e definição de arco do cupido',
+  'Entender indicações, contraindicações e cuidados pós-procedimento',
+  'Precificar e vender o serviço com posicionamento premium',
+];
+
+const modules = [
+  {
+    number: '01',
+    title: 'Anatomia & Mapeamento Labial',
+    description: 'Estudo detalhado da anatomia dos lábios, proporções áureas e planejamento personalizado para cada paciente.',
+  },
+  {
+    number: '02',
+    title: 'Materiais & Instrumentos',
+    description: 'Tipos de preenchedores, cânulas vs agulhas, biossegurança e montagem do carrinho ideal.',
+  },
+  {
+    number: '03',
+    title: 'Técnicas de Preenchimento',
+    description: 'Retroinjeção, microbolus, fan technique e os principais pontos de aplicação para volume e contorno.',
+  },
+  {
+    number: '04',
+    title: 'Contorno & Definição',
+    description: 'Arco do cupido, filtro labial, eversão e técnicas para lábio superior e inferior com naturalidade.',
+  },
+  {
+    number: '05',
+    title: 'Harmonização & Simetria',
+    description: 'Correção de assimetrias, lábios finos, caídos e envelhecidos — protocolos completos de harmonização.',
+  },
+  {
+    number: '06',
+    title: 'Intercorrências & Segurança',
+    description: 'Reconhecimento e manejo de complicações, uso de hialuronidase e protocolos de emergência.',
+  },
+  {
+    number: '07',
+    title: 'Pós-procedimento & Fidelização',
+    description: 'Orientações ao cliente, retorno, manutenção do resultado e construção de carteira fiel.',
+  },
+  {
+    number: '08',
+    title: 'Precificação & Posicionamento',
+    description: 'Como cobrar o que você vale, comunicar o serviço premium e atrair os clientes certos.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Preciso de experiência prévia em estética?',
+    a: 'O curso é estruturado para profissionais da área de estética e saúde. Conhecimentos básicos de anatomia facial são recomendados.',
+  },
+  {
+    q: 'O curso tem certificado?',
+    a: 'Sim. Ao concluir todos os módulos, você recebe certificado digital de conclusão da Arte da Face.',
+  },
+  {
+    q: 'Por quanto tempo tenho acesso?',
+    a: 'Acesso imediato e por tempo indeterminado — assista no seu ritmo, quantas vezes quiser.',
+  },
+  {
+    q: 'O curso é ao vivo ou gravado?',
+    a: 'O conteúdo é 100% gravado em alta qualidade, disponível para assistir a qualquer momento.',
+  },
+];
+---
+
+<Layout
+  title="Arte dos Lábios | Preenchimento Labial — Arte da Face"
+  description="A especialização em preenchimento e contorno labial que transforma técnica em resultados artísticos."
+>
+  <!-- ========== HEADER ========== -->
+  <header class="w-full py-5 px-8 flex items-center justify-between bg-[#FAF7F2] border-b border-[#9A8245]/15">
+    <a href="/" class="flex items-center gap-3 group">
+      <span
+        class="text-lg tracking-[0.3em] font-light text-[#9A8245] group-hover:text-[#B09A5A] transition-colors duration-300"
+        style="font-family: 'Cormorant Garamond', Georgia, serif;"
+      >
+        ARTE DA FACE
+      </span>
+      <span class="text-[#9A8245]/30 text-sm">/</span>
+      <span class="text-xs tracking-[0.2em] uppercase text-[#7A7A7A] font-light">Lábios</span>
+    </a>
+    <a
+      href={KIWIFY_URL}
+      class="hidden sm:inline-block text-xs tracking-[0.2em] uppercase px-5 py-2 transition-all duration-300"
+      style="background-color: #9A8245; color: #FAF7F2;"
+      onmouseover="this.style.backgroundColor='#B09A5A'"
+      onmouseout="this.style.backgroundColor='#9A8245'"
+    >
+      Garantir vaga
+    </a>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="min-h-[90vh] flex flex-col items-center justify-center text-center px-6 py-24 bg-[#FAF7F2] relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 bg-gradient-to-b from-transparent to-[#9A8245]/20"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-40 bg-gradient-to-t from-transparent to-[#9A8245]/20"></div>
+    </div>
+
+    <p class="text-[#9A8245] text-xs tracking-[0.5em] uppercase mb-6 font-light">Arte da Face — Formação Especializada</p>
+
+    <h1
+      class="leading-[1.08] mb-6 max-w-4xl"
+      style="
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(3.2rem, 7.5vw, 6.5rem);
+        color: #2A2A2A;
+        letter-spacing: -0.01em;
+      "
+    >
+      Arte dos Lábios
+    </h1>
+
+    <p
+      class="text-[#9A8245] mb-3 font-light tracking-[0.08em]"
+      style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem;"
+    >
+      Preenchimento & Contorno Labial
+    </p>
+
+    <div class="w-16 h-px bg-[#9A8245]/35 mx-auto mb-8"></div>
+
+    <p
+      class="text-[#5A5A5A] font-light leading-relaxed max-w-2xl mb-4 tracking-wide"
+      style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.05rem, 2vw, 1.3rem);"
+    >
+      A especialização de alto padrão que transforma técnica em resultados artísticos.
+    </p>
+    <p class="text-[#7A7A7A] text-sm font-light leading-relaxed max-w-lg mb-12 tracking-wide">
+      8 módulos · 12 horas de conteúdo · Acesso imediato e vitalício
+    </p>
+
+    <a
+      href={KIWIFY_URL}
+      class="inline-block text-sm tracking-[0.35em] uppercase px-12 py-5 mb-8 transition-all duration-300 shadow-md hover:shadow-lg"
+      style="background-color: #9A8245; color: #FAF7F2;"
+      onmouseover="this.style.backgroundColor='#B09A5A'"
+      onmouseout="this.style.backgroundColor='#9A8245'"
+    >
+      Quero Me Inscrever
+    </a>
+
+    <p class="text-[#9A9A9A] text-xs tracking-wider">Pagamento seguro · Acesso imediato · Garantia de 7 dias</p>
+
+    <!-- Video -->
+    <div class="w-full max-w-3xl mx-auto mt-20 aspect-video bg-[#F0EBE1] border border-[#9A8245]/15 flex flex-col items-center justify-center gap-4 relative overflow-hidden">
+      <div class="w-16 h-16 rounded-full border border-[#9A8245]/40 flex items-center justify-center">
+        <svg class="w-6 h-6 ml-1" fill="#9A8245" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+      <p class="text-[#9A9A9A] text-xs tracking-[0.25em] uppercase">Apresentação do curso</p>
+      <!--
+        Para adicionar seu vídeo, substitua este bloco por:
+        <iframe
+          src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+          class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      -->
+    </div>
+  </section>
+
+  <!-- ========== RESULTADOS ========== -->
+  <section class="py-20 px-6 bg-[#F0EBE1]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-[#9A8245] text-xs tracking-[0.4em] uppercase mb-4 font-light">Transformação</p>
+        <h2
+          class="text-4xl sm:text-5xl text-[#2A2A2A] font-light"
+          style="font-family: 'Cormorant Garamond', Georgia, serif;"
+        >
+          O que você vai dominar
+        </h2>
+        <div class="w-12 h-px bg-[#9A8245]/35 mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {outcomes.map((item) => (
+          <div class="flex items-start gap-4 bg-[#FAF7F2] p-6 border border-[#9A8245]/10">
+            <span class="text-[#9A8245] mt-0.5 flex-shrink-0">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </span>
+            <p class="text-[#3A3A3A] text-sm font-light leading-relaxed">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MÓDULOS ========== -->
+  <section id="modulos" class="py-20 px-6 bg-[#FAF7F2]">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-[#9A8245] text-xs tracking-[0.4em] uppercase mb-4 font-light">Conteúdo Programático</p>
+        <h2
+          class="text-4xl sm:text-5xl text-[#2A2A2A] font-light"
+          style="font-family: 'Cormorant Garamond', Georgia, serif;"
+        >
+          Os 8 módulos do curso
+        </h2>
+        <div class="w-12 h-px bg-[#9A8245]/35 mx-auto mt-6"></div>
+      </div>
+
+      <div class="flex flex-col divide-y divide-[#9A8245]/10">
+        {modules.map((mod) => (
+          <div class="py-7 flex gap-8 items-start group hover:bg-[#FAF7F2] transition-colors duration-200">
+            <span
+              class="text-3xl font-light text-[#9A8245]/20 flex-shrink-0 w-10 text-right leading-none mt-1"
+              style="font-family: 'Cormorant Garamond', Georgia, serif;"
+            >
+              {mod.number}
+            </span>
+            <div class="flex flex-col gap-2">
+              <h3
+                class="text-xl text-[#2A2A2A] font-light group-hover:text-[#9A8245] transition-colors duration-300"
+                style="font-family: 'Cormorant Garamond', Georgia, serif;"
+              >
+                {mod.title}
+              </h3>
+              <p class="text-sm text-[#5A5A5A] font-light leading-relaxed">{mod.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE A ESPECIALISTA ========== -->
+  <section id="especialista" class="py-20 px-6 bg-[#F0EBE1]">
+    <div class="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-14">
+      <div class="flex-shrink-0">
+        <div class="w-56 h-72 bg-[#E8E0D0] border border-[#9A8245]/15 flex flex-col items-center justify-center gap-3">
+          <svg class="w-14 h-14 text-[#9A8245]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+          <p class="text-[#9A9A9A] text-xs tracking-[0.2em] uppercase">Sua foto aqui</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-5 text-center lg:text-left">
+        <p class="text-[#9A8245] text-xs tracking-[0.4em] uppercase font-light">Sua instrutora</p>
+        <h2
+          class="text-4xl sm:text-5xl text-[#2A2A2A] font-light"
+          style="font-family: 'Cormorant Garamond', Georgia, serif;"
+        >
+          Seu Nome Completo
+        </h2>
+        <div class="w-10 h-px bg-[#9A8245]/35 lg:mx-0 mx-auto"></div>
+        <p class="text-[#5A5A5A] font-light leading-relaxed text-sm">
+          Especialista em harmonização orofacial e preenchimento labial com mais de
+          <strong class="font-medium text-[#3A3A3A]">8 anos de atuação</strong> em clínicas de alto padrão.
+          Formada em biomedicina e com especializações internacionais em preenchimentos faciais.
+        </p>
+        <p class="text-[#5A5A5A] font-light leading-relaxed text-sm">
+          Já realizou mais de <strong class="font-medium text-[#3A3A3A]">2.000 procedimentos</strong> e formou dezenas
+          de profissionais que hoje são referência no mercado estético.
+        </p>
+        <a
+          href={KIWIFY_URL}
+          class="inline-block self-center lg:self-start text-xs tracking-[0.3em] uppercase px-8 py-3 transition-all duration-300 mt-2"
+          style="color: #9A8245; border: 1px solid #9A824550;"
+          onmouseover="this.style.backgroundColor='#9A8245'; this.style.color='#FAF7F2';"
+          onmouseout="this.style.backgroundColor='transparent'; this.style.color='#9A8245';"
+        >
+          Quero aprender com você
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="py-20 px-6 bg-[#FAF7F2]">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <p class="text-[#9A8245] text-xs tracking-[0.4em] uppercase mb-4 font-light">Dúvidas frequentes</p>
+        <h2
+          class="text-4xl sm:text-5xl text-[#2A2A2A] font-light"
+          style="font-family: 'Cormorant Garamond', Georgia, serif;"
+        >
+          Perguntas & Respostas
+        </h2>
+        <div class="w-12 h-px bg-[#9A8245]/35 mx-auto mt-6"></div>
+      </div>
+
+      <div class="flex flex-col divide-y divide-[#9A8245]/10">
+        {faqs.map((faq) => (
+          <div class="py-7">
+            <p
+              class="text-lg text-[#2A2A2A] font-light mb-3"
+              style="font-family: 'Cormorant Garamond', Georgia, serif;"
+            >
+              {faq.q}
+            </p>
+            <p class="text-sm text-[#5A5A5A] font-light leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA FINAL ========== -->
+  <section id="inscricao" class="py-24 px-6 text-center" style="background-color: #2A2A2A;">
+    <div class="max-w-2xl mx-auto flex flex-col items-center gap-6">
+      <p class="text-[#9A8245] text-xs tracking-[0.45em] uppercase font-light">Vagas Limitadas</p>
+      <h2
+        class="text-4xl sm:text-6xl font-light leading-tight text-[#F5F0E8]"
+        style="font-family: 'Cormorant Garamond', Georgia, serif;"
+      >
+        Comece hoje a criar<br />
+        <em style="color: #C4AD77;">resultados artísticos</em>
+      </h2>
+      <div class="w-12 h-px bg-[#9A8245]/40"></div>
+      <p class="font-light leading-relaxed text-sm tracking-wide" style="color: #666;">
+        8 módulos · 12h de conteúdo · Acesso vitalício · Certificado incluído
+      </p>
+      <a
+        href={KIWIFY_URL}
+        class="inline-block text-sm tracking-[0.35em] uppercase px-14 py-5 transition-all duration-300 shadow-lg mt-4"
+        style="background-color: #9A8245; color: #FAF7F2;"
+        onmouseover="this.style.backgroundColor='#B09A5A'"
+        onmouseout="this.style.backgroundColor='#9A8245'"
+      >
+        Garantir Minha Vaga
+      </a>
+      <p class="text-xs tracking-wider" style="color: #444;">
+        Pagamento seguro · Acesso imediato · Garantia de 7 dias
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="py-8 px-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#1A1A1A]" style="border-top: 1px solid #9A824510;">
+    <a
+      href="/"
+      class="text-lg tracking-[0.35em] font-light transition-colors duration-300"
+      style="font-family: 'Cormorant Garamond', Georgia, serif; color: #9A824555;"
+      onmouseover="this.style.color='#9A8245'"
+      onmouseout="this.style.color='#9A824555'"
+    >
+      ARTE DA FACE
+    </a>
+    <p class="text-xs tracking-wider" style="color: #333;">
+      &copy; {new Date().getFullYear()} Arte da Face. Todos os direitos reservados.
+    </p>
+  </footer>
+</Layout>

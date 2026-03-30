@@ -1,11 +1,223 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const courses = [
+  {
+    slug: 'labios',
+    tag: 'Disponível agora',
+    available: true,
+    title: 'Arte dos Lábios',
+    subtitle: 'Preenchimento & Contorno Labial',
+    description: 'Domine as técnicas de preenchimento, harmonização e contorno labial para resultados naturais e precisos.',
+    modules: '8 módulos',
+    hours: '12h de conteúdo',
+    accent: '#9A8245',
+  },
+  {
+    slug: null,
+    tag: 'Em breve',
+    available: false,
+    title: 'Arte do Olhar',
+    subtitle: 'Design de Sobrancelhas & Olhos',
+    description: 'Design de sobrancelhas, lifting de cílios e técnicas avançadas para o olhar perfeito.',
+    modules: '6 módulos',
+    hours: '9h de conteúdo',
+    accent: '#7A7A7A',
+  },
+  {
+    slug: null,
+    tag: 'Em breve',
+    available: false,
+    title: 'Arte da Pele',
+    subtitle: 'Skincare & Protocolos Avançados',
+    description: 'Análise cutânea, peelings, radiofrequência e protocolos de rejuvenescimento de alto padrão.',
+    modules: '10 módulos',
+    hours: '15h de conteúdo',
+    accent: '#7A7A7A',
+  },
+  {
+    slug: null,
+    tag: 'Em breve',
+    available: false,
+    title: 'Arte das Mãos',
+    subtitle: 'Nail Design & Cuidados',
+    description: 'Nail art de luxo, alongamentos e técnicas de manicure premium para clientes exigentes.',
+    modules: '7 módulos',
+    hours: '10h de conteúdo',
+    accent: '#7A7A7A',
+  },
+  {
+    slug: null,
+    tag: 'Em breve',
+    available: false,
+    title: 'Arte Corporal',
+    subtitle: 'Modelagem & Estética Corporal',
+    description: 'Drenagem, criolipólise, massagens modeladoras e protocolos de tratamento corporal.',
+    modules: '9 módulos',
+    hours: '13h de conteúdo',
+    accent: '#7A7A7A',
+  },
+  {
+    slug: null,
+    tag: 'Em breve',
+    available: false,
+    title: 'Arte do Negócio',
+    subtitle: 'Gestão & Posicionamento Premium',
+    description: 'Precificação, captação de clientes de alto padrão e construção de marca pessoal no mercado de luxo.',
+    modules: '5 módulos',
+    hours: '8h de conteúdo',
+    accent: '#7A7A7A',
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Arte da Face | Portal de Cursos"
+  description="A plataforma de formação estética de alto padrão. Domine cada detalhe da beleza."
+>
+  <!-- ========== HEADER ========== -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style="background: linear-gradient(to bottom, #0D0D0D, transparent);">
+    <span
+      class="text-xl tracking-[0.3em] font-light"
+      style="font-family: 'Cormorant Garamond', Georgia, serif; color: #C4AD77;"
+    >
+      ARTE DA FACE
+    </span>
+    <nav class="hidden sm:flex items-center gap-8">
+      <a href="#cursos" class="text-xs tracking-[0.2em] uppercase text-[#888] hover:text-[#C4AD77] transition-colors duration-300">Cursos</a>
+      <a href="/labios" class="text-xs tracking-[0.2em] uppercase px-5 py-2 transition-all duration-300" style="border: 1px solid #9A824570; color: #C4AD77;" onmouseover="this.style.backgroundColor='#9A8245'; this.style.color='#FAF7F2';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#C4AD77';">
+        Começar agora
+      </a>
+    </nav>
+  </header>
+
+  <!-- ========== HERO / FEATURED ========== -->
+  <section class="relative min-h-[85vh] flex flex-col justify-end px-8 pb-20 pt-32 overflow-hidden" style="background-color: #0D0D0D;">
+    <!-- Background texture -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 60% 40%, #9A824512 0%, transparent 65%), radial-gradient(ellipse at 20% 80%, #9A824508 0%, transparent 60%);"></div>
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style="background: linear-gradient(to bottom, transparent, #0D0D0D);"></div>
+
+    <div class="relative max-w-6xl mx-auto w-full">
+      <p class="text-xs tracking-[0.45em] uppercase mb-5 font-light" style="color: #9A8245;">Destaque — Disponível agora</p>
+      <h1
+        class="leading-[1.05] mb-6 max-w-3xl"
+        style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-style: italic; font-size: clamp(3.5rem, 7vw, 6rem); color: #F5F0E8;"
+      >
+        Arte dos Lábios
+      </h1>
+      <p class="font-light leading-relaxed mb-8 max-w-xl" style="color: #888; font-size: 1.05rem;">
+        Preenchimento & Contorno Labial — a técnica que transforma resultados em arte. 8 módulos, 12h de conteúdo.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href="/labios"
+          class="inline-block text-xs tracking-[0.35em] uppercase px-10 py-4 transition-all duration-300 shadow-lg"
+          style="background-color: #9A8245; color: #FAF7F2;"
+          onmouseover="this.style.backgroundColor='#B09A5A'"
+          onmouseout="this.style.backgroundColor='#9A8245'"
+        >
+          Ver curso
+        </a>
+        <span class="text-xs tracking-[0.2em] uppercase" style="color: #555;">8 módulos · 12h · Acesso imediato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATÁLOGO ========== -->
+  <section id="cursos" class="py-20 px-8" style="background-color: #0D0D0D;">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-6 mb-10">
+        <h2 class="text-sm tracking-[0.35em] uppercase font-light" style="color: #9A8245;">Catálogo Arte da Face</h2>
+        <div class="flex-1 h-px" style="background-color: #9A824520;"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {courses.map((course) => (
+          <div
+            class={`group relative flex flex-col overflow-hidden transition-all duration-500 ${course.available ? 'cursor-pointer hover:-translate-y-1' : 'opacity-60'}`}
+            style="background-color: #161616; border: 1px solid #9A824518;"
+          >
+            <!-- Thumbnail placeholder -->
+            <div class="relative aspect-video flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #1A1A1A, #111);">
+              <span
+                class="text-6xl font-light transition-transform duration-500 group-hover:scale-110"
+                style={`font-family: 'Cormorant Garamond', Georgia, serif; color: ${course.available ? '#9A824530' : '#33333360'}; font-style: italic;`}
+              >
+                {course.title.split(' ').pop()}
+              </span>
+              <!-- Overlay gradient -->
+              <div class="absolute inset-0" style="background: linear-gradient(to top, #161616 0%, transparent 60%);"></div>
+              <!-- Tag -->
+              <span
+                class="absolute top-4 left-4 text-[10px] tracking-[0.3em] uppercase px-3 py-1"
+                style={course.available
+                  ? 'background-color: #9A8245; color: #FAF7F2;'
+                  : 'background-color: #2A2A2A; color: #666;'}
+              >
+                {course.tag}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col gap-3 p-6">
+              <div>
+                <h3
+                  class="text-xl font-light mb-1"
+                  style={`font-family: 'Cormorant Garamond', Georgia, serif; color: ${course.available ? '#F5F0E8' : '#888'};`}
+                >
+                  {course.title}
+                </h3>
+                <p class="text-[10px] tracking-[0.25em] uppercase" style={`color: ${course.available ? '#9A8245' : '#444'};`}>
+                  {course.subtitle}
+                </p>
+              </div>
+              <div class="h-px w-8" style={`background-color: ${course.available ? '#9A824540' : '#33333360'};`}></div>
+              <p class="text-sm font-light leading-relaxed" style="color: #666;">{course.description}</p>
+              <div class="flex items-center gap-4 mt-1">
+                <span class="text-[10px] tracking-wider uppercase" style="color: #444;">{course.modules}</span>
+                <span class="text-[10px]" style="color: #333;">·</span>
+                <span class="text-[10px] tracking-wider uppercase" style="color: #444;">{course.hours}</span>
+              </div>
+            </div>
+
+            <!-- CTA row -->
+            <div class="px-6 pb-6 mt-auto">
+              {course.available ? (
+                <a
+                  href={`/${course.slug}`}
+                  class="block text-center text-[10px] tracking-[0.3em] uppercase py-3 transition-all duration-300"
+                  style="border: 1px solid #9A824550; color: #9A8245;"
+                  onmouseover="this.style.backgroundColor='#9A8245'; this.style.color='#FAF7F2'; this.style.borderColor='#9A8245';"
+                  onmouseout="this.style.backgroundColor='transparent'; this.style.color='#9A8245'; this.style.borderColor='#9A824550';"
+                >
+                  Conhecer o curso
+                </a>
+              ) : (
+                <div
+                  class="block text-center text-[10px] tracking-[0.3em] uppercase py-3"
+                  style="border: 1px solid #2A2A2A; color: #444;"
+                >
+                  Em breve
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="py-8 px-8 flex flex-col sm:flex-row items-center justify-between gap-4" style="background-color: #0A0A0A; border-top: 1px solid #9A824510;">
+    <span
+      class="text-lg tracking-[0.35em] font-light"
+      style="font-family: 'Cormorant Garamond', Georgia, serif; color: #9A824560;"
+    >
+      ARTE DA FACE
+    </span>
+    <p class="text-xs tracking-wider" style="color: #444;">
+      &copy; {new Date().getFullYear()} Arte da Face. Todos os direitos reservados.
+    </p>
+  </footer>
 </Layout>
